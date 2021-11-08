@@ -209,10 +209,6 @@ static ngx_int_t ngx_http_ipset_access_handler(ngx_http_request_t *r)
       return NGX_OK;  
     }
 
-    #if (NGX_HAVE_INET6)
-      //FIXME: IPv6 support? ipsets do not seem to support it
-      #warning IPv6 is not supported by ipset_module, IPv6 requests will not be filtered
-    #endif
 
     return NGX_DECLINED; // we have nothing to do with this request => pass to next handler
 }
